@@ -1,4 +1,4 @@
-# flutter_application_8
+# Slash
 
 A new Flutter project.
 
