@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_8/constants/app_dimensions/app_dimensions_class.dart';
+import 'package:flutter_application_8/core/utilis/theme/text_theme.dart';
 import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_category_cubt/fetch_category_cubit.dart';
 import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_category_cubt/fetch_category_state.dart';
 import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/categories/category_widget.dart';
@@ -7,8 +8,8 @@ import 'package:flutter_application_8/features/home/presentation/views/home_view
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CategoriesWidget extends StatelessWidget {
-  const CategoriesWidget({super.key});
-
+  CategoriesWidget({super.key, required this.radius});
+  double radius;
   @override
   Widget build(BuildContext context) {
     AppDimension.initDimensions(context);
@@ -16,7 +17,11 @@ class CategoriesWidget extends StatelessWidget {
     double height = AppDimension.screenHeight;
     return Column(
       children: [
-        HeadingBodyWidget(headingText: 'Categories', width: width),
+        HeadingBodyWidget(
+          headingText: 'Categories',
+          width: width,
+          headingStyle: TTextTheme.lightTheme.bodyLarge!,
+        ),
         SizedBox(
           height: height * 0.025,
         ),
@@ -30,7 +35,12 @@ class CategoriesWidget extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) =>
                       CategoryWidget(
-                          height: height, category: state.categories[index]),
+                        iconSize: 25,
+                    height: height,
+                    category: state.categories[index],
+                    radius: radius,
+                    titleStyle: TTextTheme.lightTheme.bodyMedium!,
+                  ),
                   separatorBuilder: (context, index) => SizedBox(
                     width: width * 0.02,
                   ),
@@ -38,7 +48,7 @@ class CategoriesWidget extends StatelessWidget {
                 ),
               );
             }
-            return Container();
+            return const CircularProgressIndicator();
           },
         ),
       ],

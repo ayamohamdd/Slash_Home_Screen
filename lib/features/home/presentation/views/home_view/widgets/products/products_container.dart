@@ -6,16 +6,18 @@ import 'package:flutter_application_8/features/home/domain/entities/product_enti
 import 'package:flutter_application_8/core/utilis/theme/icon_button_widget.dart';
 
 class ProductContainerWidget extends StatelessWidget {
-   ProductContainerWidget(
+  ProductContainerWidget(
       {super.key,
       required this.width,
       required this.height,
       required this.context,
-      required this.products});
+      required this.products,
+      required this.productNameStyle});
   double width;
   double height;
   BuildContext context;
   ProductEntity products;
+  TextStyle productNameStyle;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -24,22 +26,22 @@ class ProductContainerWidget extends StatelessWidget {
         width: width * 0.35,
         // height: height * 0.1,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
               borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(10), topRight: Radius.circular(10)),
               child: Image(
-                height: height * 0.15,
+                height: height,
                 width: double.infinity,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
                 image: AssetImage(products.eImage!),
               ),
             ),
             Text(
               products.eName!,
-              style: TTextTheme.lightTheme.bodyMedium,
+              style: productNameStyle,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,4 +77,3 @@ class ProductContainerWidget extends StatelessWidget {
     );
   }
 }
-

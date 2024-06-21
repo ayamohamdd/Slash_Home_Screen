@@ -33,12 +33,18 @@ class HomeDataSourceImpl extends HomeDataSource {
         await rootBundle.loadString("assets/dummy_data/dummyData.json");
     var data = json.decode(response);
 
-    List<ProductEntity> productsList = [];
-    for (var product in data[category]) {
-      productsList.add(ProductCategoryModel.fromJson(product));
-    }
+    var productModel = ProductModel.fromJson(data);
 
-    return productsList;
+    switch (category) {
+      case 'bestSelling':
+        return productModel.bestSelling ?? [];
+      case 'newArrival':
+        return productModel.newArrival ?? [];
+      case 'recommendedForYou':
+        return productModel.recommendedForYou ?? [];
+      default:
+        return [];
+    }
   }
 
   @override

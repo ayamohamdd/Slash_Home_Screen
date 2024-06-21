@@ -65,13 +65,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       right: width * 0.07),
                   child: SearchWidget(width: width, height: height),
                 ),
-                OfferCarousel(height: height),
+                OfferCarousel(height: height*0.2,width: width*0.8,),
                 SizedBox(
                   height: height * 0.03,
                 ),
                 Column(
                   children: [
-                    const CategoriesWidget(),
+                    CategoriesWidget(radius: 36,),
                     SizedBox(
                       height: height * 0.015,
                     ),

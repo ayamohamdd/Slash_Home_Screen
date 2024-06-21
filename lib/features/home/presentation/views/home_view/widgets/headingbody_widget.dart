@@ -4,9 +4,14 @@ import 'package:flutter_application_8/core/utilis/theme/text_theme.dart';
 
 class HeadingBodyWidget extends StatelessWidget {
   HeadingBodyWidget(
-      {super.key, required this.headingText, required this.width});
+      {super.key, required this.headingText, required this.width,required this.headingStyle});
   String headingText;
   double width;
+  
+  
+
+
+  TextStyle headingStyle;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,17 +21,17 @@ class HeadingBodyWidget extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-              child: Text(headingText, style: TTextTheme.lightTheme.bodyLarge)),
+              child: Text(headingText, style: headingStyle)),
           Text(
             'See all',
             style: TTextTheme.lightTheme.bodySmall,
           ),
-          const SizedBox(
-            width: 10,
+          SizedBox(
+            width: width * 0.05,
           ),
           Container(
-              width: 25,
-              height: 25,
+              width: width * 0.08,
+              height: width * 0.08,
               decoration: BoxDecoration(
                   color: AppConstants.background2Color,
                   borderRadius: BorderRadius.circular(5)),

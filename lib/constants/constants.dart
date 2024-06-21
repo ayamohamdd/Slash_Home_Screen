@@ -10,9 +10,9 @@ class AppConstants {
   static Color? errorColor = const Color(0xffe8575a);
   static Color? fontColorOpacity = const Color.fromARGB(122, 19, 33, 51);
 
-  static Color? conColor = const Color.fromARGB(174, 13, 22, 33);
+  static Color? iconColor = const Color.fromARGB(174, 13, 22, 33);
 
-  static Color? fontColorMedium = const Color.fromARGB(255, 121, 121, 121);
+  static Color? fontColorMedium = Color.fromARGB(255, 198, 198, 198);
 
   static String font = 'Urbanist';
 }

@@ -4,35 +4,42 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class OfferCarousel extends StatelessWidget {
-  OfferCarousel({super.key, required this.height});
+  OfferCarousel({super.key, required this.height,required this.width});
   double height;
+  double width;
+
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
         items: [
           ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: const Image(
-                image: AssetImage('assets/images/offers.png'),
+              child:  Image(
+                image: const AssetImage('assets/images/blackfriday.jpg'),
+                width: width,
                 fit: BoxFit.cover,
               )),
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: const Image(
-              image: AssetImage('assets/images/banner2.jpg'),
+            child:  Image(
+              image: const AssetImage('assets/images/banner2.jpg'),
+                width: width,
+
               fit: BoxFit.cover,
             ),
           ),
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: const Image(
-              image: AssetImage('assets/images/banner3.jpg'),
+            child:  Image(
+              image: const AssetImage('assets/images/banner3.jpg'),
+                width: width,
+
               fit: BoxFit.cover,
             ),
           ),
         ],
         options: CarouselOptions(
-            height: height * 0.18,
+            height: height,
             initialPage: 0,
             //aspectRatio: 16/9,
             viewportFraction: 1,

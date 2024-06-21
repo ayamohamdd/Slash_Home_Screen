@@ -11,7 +11,7 @@ import 'package:flutter_application_8/features/home/presentation/manager/cubit/f
 import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_new_arrival_products_cubit/fetch_new_arrival_products_cubit.dart';
 import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_recommended_products_cubit/fetch_recommended_products_cubit.dart';
 import 'package:flutter_application_8/core/utilis/theme/theme.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/home_screen.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/home_mobile/home_screen.dart';
 import 'package:flutter_application_8/features/home/presentation/views/home_view/home_web/home_screen_web.dart';
 import 'package:flutter_application_8/features/home/presentation/views/layout_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -62,10 +62,8 @@ class MyApp extends StatelessWidget {
           themeMode: ThemeMode.light,
           home: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
-              print(constraints.minHeight.toInt());
-
               if (constraints.minWidth.toInt() <= 640) {
-                return const HomeScreen();
+                return const LayoutScreen();
               }
               return const HomeWebScreen();
             },

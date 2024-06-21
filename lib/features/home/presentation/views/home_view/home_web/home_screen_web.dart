@@ -1,20 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_8/constants/app_dimensions/app_dimensions_class.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_best_selling_products_cubit/fetch_best_selling_products_cubit.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_category_cubt/fetch_category_cubit.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_category_cubt/fetch_category_state.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_new_arrival_products_cubit/fetch_new_arrival_products_cubit.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_new_arrival_products_cubit/fetch_new_arrival_products_state.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_recommended_products_cubit/fetch_recommended_products_cubit.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_recommended_products_cubit/fetch_recommended_products_state.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/appbar_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/categories/categories_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/home_web/widgets/app_bar_web_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/home_web/widgets/categories_web_widget.dart';
 import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/offer_container.dart';
 import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/products/best_selling_products_widget.dart';
 import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/products/new_arrival_products_widget.dart';
 import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/products/recommended_products_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/search_widget.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeWebScreen extends StatefulWidget {
   const HomeWebScreen({super.key});
@@ -30,47 +21,31 @@ class _HomeScreenWebState extends State<HomeWebScreen> {
     double width = AppDimension.screenWidth;
     double height = AppDimension.screenHeight;
     return Scaffold(
-        // appBar: AppBar(
-        //   // leading: Text('Slash.',style: TTextTheme.lightTheme.headlineLarge,),
-        //   title: Text('Slash.'),
-        //   actions: [
-        //     Padding(
-        //       padding: EdgeInsets.only(right: 0.04 * width),
-        //       child: customIconButton(
-        //         backgroundColor: AppConstants.iconBackground!,
-        //           icon: Icons.notifications_outlined,
-        //           onPressed: () {},
-        //           color: AppConstants.fontColor),
-        //     )
-        //   ],
-        // ),
-        body: Padding(
-            padding: EdgeInsets.only(left: width * 0.07),
-            child: ListView(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: height * 0.03,
-                      bottom: height * 0.02,
-                      right: width * 0.07),
-                  child: const AppBarWidget(),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      bottom: height * 0.035,
-                      top: height * 0.015,
-                      right: width * 0.07),
-                  child: SearchWidget(width: width, height: height),
-                ),
-                OfferCarousel(height: height),
-                SizedBox(
-                  height: height * 0.03,
-                ),
-                Column(
+        body: ListView(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 38.0, vertical: 15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              AppBarWebWidget(
+                width: width,
+                height: height,
+              ),
+              SizedBox(
+                height: height * 0.03,
+              ),
+              OfferCarousel(height: height * 0.6, width: width * 0.6),
+              SizedBox(
+                height: height * 0.03,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: width * 0.030),
+                child: Column(
                   children: [
-                    const CategoriesWidget(),
+                    const CategoriesWebWidget(),
                     SizedBox(
-                      height: height * 0.015,
+                      height: height * 0.03,
                     ),
                     const BestSellingProductsWidget(),
                     SizedBox(
@@ -81,10 +56,13 @@ class _HomeScreenWebState extends State<HomeWebScreen> {
                       height: height * 0.015,
                     ),
                     const RecommendedWidget(),
-                    
                   ],
-                )
-              ],
-            )));
+                ),
+              ),
+            ],
+          ),
+        )
+      ],
+    ));
   }
 }

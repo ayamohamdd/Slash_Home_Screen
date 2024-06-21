@@ -23,7 +23,7 @@ class SearchWidget extends StatelessWidget {
               children: [
                 Icon(
                   Icons.search_outlined,
-                  color: AppConstants.conColor,
+                  color: AppConstants.iconColor,
                 ),
                 SizedBox(
                   width: width * 0.02,

@@ -5,7 +5,7 @@ class TTextTheme {
   TTextTheme._();
   static TextTheme lightTheme = TextTheme(
     headlineLarge: const TextStyle().copyWith(
-        fontSize: 22.0,
+        fontSize: 28.0,
         fontWeight: FontWeight.bold,
         color: AppConstants.fontColor),
     headlineMedium: const TextStyle().copyWith(
@@ -31,26 +31,26 @@ class TTextTheme {
         color: AppConstants.fontColorMedium),
   );
 
-  // static TextTheme darkTheme = TextTheme(
-  //   headlineLarge: const TextStyle().copyWith(
-  //       fontSize: 32.0,
-  //       fontWeight: FontWeight.bold,
-  //       color: AppConstants.backgroundColor),
-  //   headlineMedium: const TextStyle().copyWith(
-  //       fontSize: 18.0,
-  //       fontWeight: FontWeight.w600,
-  //       color: AppConstants.fontMediumDark),
-  //   bodyLarge: const TextStyle().copyWith(
-  //       fontSize: 18.0,
-  //       fontWeight: FontWeight.bold,
-  //       color: AppConstants.backgroundColor),
-  //   bodyMedium: const TextStyle().copyWith(
-  //       fontSize: 15.0,
-  //       fontWeight: FontWeight.w600,
-  //       color: AppConstants.backgroundColor),
-  //   bodySmall: const TextStyle().copyWith(
-  //       fontSize: 15.0,
-  //       fontWeight: FontWeight.w600,
-  //       color: AppConstants.fontMediumDark),
-  // );
+  static TextTheme darkTheme = TextTheme(
+    headlineLarge: const TextStyle().copyWith(
+        fontSize: 32.0,
+        fontWeight: FontWeight.bold,
+        color: AppConstants.backgroundColor),
+    headlineMedium: const TextStyle().copyWith(
+        fontSize: 28.0,
+        fontWeight: FontWeight.w600,
+        color: AppConstants.fontColorMedium),
+    bodyLarge: const TextStyle().copyWith(
+        fontSize: 18.0,
+        fontWeight: FontWeight.bold,
+        color: AppConstants.backgroundColor),
+    bodyMedium: const TextStyle().copyWith(
+        fontSize: 15.0,
+        fontWeight: FontWeight.w600,
+        color: AppConstants.backgroundColor),
+    bodySmall: const TextStyle().copyWith(
+        fontSize: 15.0,
+        fontWeight: FontWeight.w600,
+        color: AppConstants.fontColorMedium),
+  );
 }

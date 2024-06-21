@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_8/features/cart/cart_screen.dart';
 import 'package:flutter_application_8/features/favorits/favorits_screen.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/home_screen.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/home_mobile/home_screen.dart';
 import 'package:flutter_application_8/features/profile/profile_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
