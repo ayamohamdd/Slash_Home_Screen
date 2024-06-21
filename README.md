@@ -1,7 +1,3 @@
-I understand now that you want a README file formatted with consistent use of `#` for headings to maintain the same format throughout. Here's the corrected version:
-
----
-
 # Slash App - Responsive Home Screen
 
 ## Overview
