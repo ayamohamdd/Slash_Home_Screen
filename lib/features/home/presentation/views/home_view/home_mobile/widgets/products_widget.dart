@@ -1,20 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_8/core/utilis/theme/text_theme.dart';
 import 'package:flutter_application_8/features/home/domain/entities/product_entity.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/headingbody_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/products/products_container.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/core_widgets/app_bar/headingbody_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/core_widgets/products/products_container.dart';
 
 class ProductWidget extends StatelessWidget {
-  ProductWidget(
+  const ProductWidget(
       {super.key,
       required this.width,
       required this.height,
       required this.headingTitle,
       required this.products});
-  double width;
-  double height;
-  String headingTitle;
-  List<ProductEntity> products;
+  final double width;
+  final double height;
+  final String headingTitle;
+  final List<ProductEntity> products;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class ProductWidget extends StatelessWidget {
       HeadingBodyWidget(
         headingText: headingTitle,
         width: width,
-        headingStyle: TTextTheme.lightTheme.headlineLarge!,
+        headingStyle: TTextTheme.lightTheme.bodyLarge!,
       ),
       SizedBox(
         height: height * 0.02,
@@ -33,9 +33,9 @@ class ProductWidget extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (BuildContext context, int index) =>
               ProductContainerWidget(
-                productNameStyle: TTextTheme.lightTheme.bodyMedium!,
+                  productNameStyle: TTextTheme.lightTheme.bodyMedium!,
                   width: width,
-                  height: height*.15,
+                  height: height * .15,
                   context: context,
                   products: products[index]),
           separatorBuilder: (context, index) => SizedBox(

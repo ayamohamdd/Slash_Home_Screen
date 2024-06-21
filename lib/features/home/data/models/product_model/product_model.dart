@@ -2,7 +2,7 @@ import 'package:flutter_application_8/features/home/domain/entities/product_enti
 
 import 'product_category_model.dart';
 
-class ProductModel{
+class ProductModel {
   List<ProductCategoryModel>? bestSelling;
   List<ProductCategoryModel>? newArrival;
   List<ProductCategoryModel>? recommendedForYou;
@@ -11,13 +11,16 @@ class ProductModel{
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
         bestSelling: (json['bestSelling'] as List<dynamic>?)
-            ?.map((e) => ProductCategoryModel.fromJson(e as Map<String, dynamic>))
+            ?.map(
+                (e) => ProductCategoryModel.fromJson(e as Map<String, dynamic>))
             .toList(),
         newArrival: (json['newArrival'] as List<dynamic>?)
-            ?.map((e) => ProductCategoryModel.fromJson(e as Map<String, dynamic>))
+            ?.map(
+                (e) => ProductCategoryModel.fromJson(e as Map<String, dynamic>))
             .toList(),
         recommendedForYou: (json['recommendedForYou'] as List<dynamic>?)
-            ?.map((e) => ProductCategoryModel.fromJson(e as Map<String, dynamic>))
+            ?.map(
+                (e) => ProductCategoryModel.fromJson(e as Map<String, dynamic>))
             .toList(),
       );
 

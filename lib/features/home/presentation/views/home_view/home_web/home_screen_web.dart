@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_8/constants/app_dimensions/app_dimensions_class.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/home_web/widgets/app_bar_web_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/home_web/widgets/categories_web_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/offer_container.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/products/best_selling_products_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/products/new_arrival_products_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/products/recommended_products_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/home_web/widgets/app_bar/app_bar_web_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/home_web/widgets/categories/categories_web_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/core_widgets/app_bar/offer_container.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/core_widgets/products/best_selling_products_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/core_widgets/products/new_arrival_products_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/core_widgets/products/recommended_products_widget.dart';
 
 class HomeWebScreen extends StatefulWidget {
   const HomeWebScreen({super.key});

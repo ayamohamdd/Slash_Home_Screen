@@ -1,7 +1,5 @@
 import 'dart:convert';
-
 import 'package:flutter/services.dart';
-import 'package:flutter_application_8/features/home/data/models/product_model/product_category_model.dart';
 import 'package:flutter_application_8/features/home/data/models/product_model/product_model.dart';
 import 'package:flutter_application_8/features/home/domain/entities/category_entity.dart';
 import 'package:flutter_application_8/features/home/domain/entities/product_entity.dart';

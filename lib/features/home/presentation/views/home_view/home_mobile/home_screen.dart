@@ -1,23 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_8/constants/app_dimensions/app_dimensions_class.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_best_selling_products_cubit/fetch_best_selling_products_cubit.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_category_cubt/fetch_category_cubit.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_category_cubt/fetch_category_state.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_new_arrival_products_cubit/fetch_new_arrival_products_cubit.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_new_arrival_products_cubit/fetch_new_arrival_products_state.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_recommended_products_cubit/fetch_recommended_products_cubit.dart';
-import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_recommended_products_cubit/fetch_recommended_products_state.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/categories/categories_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/products/best_selling_products_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/products/new_arrival_products_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/products/products_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/appbar_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/categories/category_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/headingbody_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/offer_container.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/products/recommended_products_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/search_widget.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/home_mobile/widgets/categories_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/core_widgets/products/best_selling_products_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/core_widgets/products/new_arrival_products_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/home_mobile/widgets/appbar_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/core_widgets/app_bar/offer_container.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/core_widgets/products/recommended_products_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/core_widgets/app_bar/search_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -33,20 +22,6 @@ class _HomeScreenState extends State<HomeScreen> {
     double width = AppDimension.screenWidth;
     double height = AppDimension.screenHeight;
     return Scaffold(
-        // appBar: AppBar(
-        //   // leading: Text('Slash.',style: TTextTheme.lightTheme.headlineLarge,),
-        //   title: Text('Slash.'),
-        //   actions: [
-        //     Padding(
-        //       padding: EdgeInsets.only(right: 0.04 * width),
-        //       child: customIconButton(
-        //         backgroundColor: AppConstants.iconBackground!,
-        //           icon: Icons.notifications_outlined,
-        //           onPressed: () {},
-        //           color: AppConstants.fontColor),
-        //     )
-        //   ],
-        // ),
         body: Padding(
             padding: EdgeInsets.only(left: width * 0.07),
             child: ListView(
@@ -65,13 +40,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       right: width * 0.07),
                   child: SearchWidget(width: width, height: height),
                 ),
-                OfferCarousel(height: height*0.2,width: width*0.8,),
+                OfferCarousel(
+                  height: height * 0.2,
+                  width: width * 0.8,
+                ),
                 SizedBox(
                   height: height * 0.03,
                 ),
                 Column(
                   children: [
-                    CategoriesWidget(radius: 36,),
+                    const CategoriesWidget(
+                      radius: 36,
+                    ),
                     SizedBox(
                       height: height * 0.015,
                     ),
@@ -84,7 +64,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: height * 0.015,
                     ),
                     const RecommendedWidget(),
-                    
                   ],
                 )
               ],

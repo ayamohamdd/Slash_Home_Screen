@@ -13,15 +13,5 @@ class TApptheme {
     scaffoldBackgroundColor: AppConstants.backgroundColor,
     textTheme: TTextTheme.lightTheme,
   );
-  // static ThemeData darkTheme = ThemeData(
-  //   useMaterial3: true,
-  //   fontFamily: AppConstants.font,
-  //   brightness: Brightness.dark,
-  //   primaryColor: AppConstants.primaryColor,
-  //   scaffoldBackgroundColor: AppConstants.fontColor,
-  //   textTheme: TTextTheme.darkTheme,
-  //   elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonThemeData,
-  //   appBarTheme: TAppBarTheme.darkAppBartheme
-
-  // );
+  
 }

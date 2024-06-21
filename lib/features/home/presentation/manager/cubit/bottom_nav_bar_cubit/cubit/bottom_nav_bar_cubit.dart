@@ -5,7 +5,6 @@ import 'package:flutter_application_8/features/favorits/favorits_screen.dart';
 import 'package:flutter_application_8/features/home/presentation/views/home_view/home_mobile/home_screen.dart';
 import 'package:flutter_application_8/features/profile/profile_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 
 part 'bottom_nav_bar_state.dart';
 
@@ -20,7 +19,6 @@ class ChangeBottomNavBarCubit extends Cubit<ChangeBottomNavBarState> {
   ];
   ChangeBottomNavBarCubit() : super(ChangeBottomNavBarInitial());
   static ChangeBottomNavBarCubit get(context) => BlocProvider.of(context);
-
 
   void changeBottom(int index) {
     // emit(ChangeBottomNavBarInitial());

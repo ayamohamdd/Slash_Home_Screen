@@ -8,5 +8,5 @@ abstract class HomeRepo {
   Future<Either<Failure, List<ProductEntity>>> fetchNewArrivalProducts();
   Future<Either<Failure, List<ProductEntity>>> fetchRecommendedProducts();
 
-  Either<Failure,List<CategoryEntity>> fetchCategories();
+  Either<Failure, List<CategoryEntity>> fetchCategories();
 }

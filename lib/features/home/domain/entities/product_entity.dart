@@ -1,5 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-
 class ProductEntity {
   int? pid;
   String? eImage;
@@ -13,5 +11,4 @@ class ProductEntity {
     required this.ePrice,
     required this.eCategoryImage,
   });
-  
 }

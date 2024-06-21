@@ -6,18 +6,18 @@ import 'package:flutter_application_8/features/home/domain/entities/product_enti
 import 'package:flutter_application_8/core/utilis/theme/icon_button_widget.dart';
 
 class ProductContainerWidget extends StatelessWidget {
-  ProductContainerWidget(
+  const ProductContainerWidget(
       {super.key,
       required this.width,
       required this.height,
       required this.context,
       required this.products,
       required this.productNameStyle});
-  double width;
-  double height;
-  BuildContext context;
-  ProductEntity products;
-  TextStyle productNameStyle;
+  final double width;
+  final double height;
+  final BuildContext context;
+  final ProductEntity products;
+  final TextStyle productNameStyle;
   @override
   Widget build(BuildContext context) {
     return InkWell(

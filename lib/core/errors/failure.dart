@@ -6,5 +6,4 @@ abstract class Failure {
 
 class FetchinDataFailure extends Failure {
   FetchinDataFailure({required super.message});
-
 }

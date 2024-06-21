@@ -3,13 +3,13 @@ import 'package:flutter_application_8/constants/app_dimensions/app_dimensions_cl
 import 'package:flutter_application_8/core/utilis/theme/text_theme.dart';
 import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_category_cubt/fetch_category_cubit.dart';
 import 'package:flutter_application_8/features/home/presentation/manager/cubit/fetch_category_cubt/fetch_category_state.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/categories/category_widget.dart';
-import 'package:flutter_application_8/features/home/presentation/views/home_view/widgets/headingbody_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/core_widgets/categories/category_widget.dart';
+import 'package:flutter_application_8/features/home/presentation/views/home_view/core_widgets/app_bar/headingbody_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CategoriesWidget extends StatelessWidget {
-  CategoriesWidget({super.key, required this.radius});
-  double radius;
+  const CategoriesWidget({super.key, required this.radius});
+  final double radius;
   @override
   Widget build(BuildContext context) {
     AppDimension.initDimensions(context);
@@ -35,7 +35,7 @@ class CategoriesWidget extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) =>
                       CategoryWidget(
-                        iconSize: 25,
+                    iconSize: 25,
                     height: height,
                     category: state.categories[index],
                     radius: radius,

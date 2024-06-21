@@ -3,15 +3,15 @@ import 'package:flutter_application_8/constants/constants.dart';
 import 'package:flutter_application_8/core/utilis/theme/text_theme.dart';
 
 class HeadingBodyWidget extends StatelessWidget {
-  HeadingBodyWidget(
-      {super.key, required this.headingText, required this.width,required this.headingStyle});
-  String headingText;
-  double width;
-  
-  
+  const HeadingBodyWidget(
+      {super.key,
+      required this.headingText,
+      required this.width,
+      required this.headingStyle});
+  final String headingText;
+  final double width;
 
-
-  TextStyle headingStyle;
+  final TextStyle headingStyle;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,8 +20,7 @@ class HeadingBodyWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Expanded(
-              child: Text(headingText, style: headingStyle)),
+          Expanded(child: Text(headingText, style: headingStyle)),
           Text(
             'See all',
             style: TTextTheme.lightTheme.bodySmall,

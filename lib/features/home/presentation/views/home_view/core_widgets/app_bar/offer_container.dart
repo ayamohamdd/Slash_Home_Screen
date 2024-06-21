@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class OfferCarousel extends StatelessWidget {
-  OfferCarousel({super.key, required this.height,required this.width});
-  double height;
-  double width;
+  const OfferCarousel({super.key, required this.height, required this.width});
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -14,26 +14,24 @@ class OfferCarousel extends StatelessWidget {
         items: [
           ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child:  Image(
+              child: Image(
                 image: const AssetImage('assets/images/blackfriday.jpg'),
                 width: width,
                 fit: BoxFit.cover,
               )),
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child:  Image(
+            child: Image(
               image: const AssetImage('assets/images/banner2.jpg'),
-                width: width,
-
+              width: width,
               fit: BoxFit.cover,
             ),
           ),
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child:  Image(
+            child: Image(
               image: const AssetImage('assets/images/banner3.jpg'),
-                width: width,
-
+              width: width,
               fit: BoxFit.cover,
             ),
           ),
@@ -51,6 +49,5 @@ class OfferCarousel extends StatelessWidget {
             autoPlayAnimationDuration: const Duration(seconds: 1),
             autoPlayCurve: Curves.fastOutSlowIn,
             scrollDirection: Axis.horizontal));
-    
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_8/constants/constants.dart';
 import 'package:flutter_application_8/core/utilis/theme/text_theme.dart';
+
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({super.key});
 
@@ -41,7 +42,7 @@ class AppBarWidget extends StatelessWidget {
             Icon(
               Icons.notifications_outlined,
               size: 28,
-              color: AppConstants.fontColor,
+              color: AppConstants.primaryColor,
             ),
             Positioned(
                 top: 5.5,
@@ -54,7 +55,5 @@ class AppBarWidget extends StatelessWidget {
         )
       ],
     );
-
   }
 }
-
