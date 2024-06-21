@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_8/constants/constants.dart';
 import 'package:flutter_application_8/core/utilis/theme/text_theme.dart';
 
-Widget headingBodyWidget(String headingText, double width) => Padding(
+class HeadingBodyWidget extends StatelessWidget {
+  HeadingBodyWidget(
+      {super.key, required this.headingText, required this.width});
+  String headingText;
+  double width;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
       padding: EdgeInsets.only(right: width * 0.07),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,3 +34,5 @@ Widget headingBodyWidget(String headingText, double width) => Padding(
         ],
       ),
     );
+  }
+}

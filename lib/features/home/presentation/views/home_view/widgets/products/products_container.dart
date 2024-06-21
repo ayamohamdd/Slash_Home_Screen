@@ -3,10 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_8/constants/constants.dart';
 import 'package:flutter_application_8/core/utilis/theme/text_theme.dart';
 import 'package:flutter_application_8/features/home/domain/entities/product_entity.dart';
-import 'package:flutter_application_8/features/home/presentation/views/widgets/icon_button_widget.dart';
+import 'package:flutter_application_8/core/utilis/theme/icon_button_widget.dart';
 
-Widget productContainer(double width, double height, BuildContext context,ProductEntity products) =>
-    InkWell(
+class ProductContainerWidget extends StatelessWidget {
+   ProductContainerWidget(
+      {super.key,
+      required this.width,
+      required this.height,
+      required this.context,
+      required this.products});
+  double width;
+  double height;
+  BuildContext context;
+  ProductEntity products;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
       child: SizedBox(
         //color: AppConstants.primaryColor,
         width: width * 0.35,
@@ -22,7 +34,7 @@ Widget productContainer(double width, double height, BuildContext context,Produc
                 height: height * 0.15,
                 width: double.infinity,
                 fit: BoxFit.cover,
-                image:  AssetImage(products.eImage!),
+                image: AssetImage(products.eImage!),
               ),
             ),
             Text(
@@ -61,3 +73,6 @@ Widget productContainer(double width, double height, BuildContext context,Produc
         ),
       ),
     );
+  }
+}
+

@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_8/constants/constants.dart';
 import 'package:flutter_application_8/core/utilis/theme/text_theme.dart';
 
-Widget searchWidget(double width, double height) => Row(
+class SearchWidget extends StatelessWidget {
+   SearchWidget({super.key,required this.width,required this.height});
+  double width;
+  double height;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
@@ -40,3 +46,7 @@ Widget searchWidget(double width, double height) => Row(
         )
       ],
     );
+    
+  }
+}
+

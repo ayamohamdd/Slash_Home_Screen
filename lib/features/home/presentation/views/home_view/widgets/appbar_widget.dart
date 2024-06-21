@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_8/constants/constants.dart';
 import 'package:flutter_application_8/core/utilis/theme/text_theme.dart';
+class AppBarWidget extends StatelessWidget {
+  const AppBarWidget({super.key});
 
-Widget appBarWidget() => Row(
+  @override
+  Widget build(BuildContext context) {
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
@@ -50,3 +54,7 @@ Widget appBarWidget() => Row(
         )
       ],
     );
+
+  }
+}
+

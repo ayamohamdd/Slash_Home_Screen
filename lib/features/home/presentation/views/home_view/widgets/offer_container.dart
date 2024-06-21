@@ -3,16 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-Widget offerContainerWidget(double width, double height) => Container(
-    width: double.infinity,
-    height: height * 0.17,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(20),
-      image: const DecorationImage(
-          image: AssetImage('assets/images/offers.png'), fit: BoxFit.cover),
-    ));
-
-Widget offerCarousel(double height) => CarouselSlider(
+class OfferCarousel extends StatelessWidget {
+  OfferCarousel({super.key, required this.height});
+  double height;
+  @override
+  Widget build(BuildContext context) {
+    return CarouselSlider(
         items: [
           ClipRRect(
               borderRadius: BorderRadius.circular(10),
@@ -39,7 +35,7 @@ Widget offerCarousel(double height) => CarouselSlider(
             height: height * 0.18,
             initialPage: 0,
             //aspectRatio: 16/9,
-            viewportFraction: 0.8,
+            viewportFraction: 1,
             enlargeCenterPage: true,
             enableInfiniteScroll: true,
             reverse: false,
@@ -48,3 +44,6 @@ Widget offerCarousel(double height) => CarouselSlider(
             autoPlayAnimationDuration: const Duration(seconds: 1),
             autoPlayCurve: Curves.fastOutSlowIn,
             scrollDirection: Axis.horizontal));
+    
+  }
+}
